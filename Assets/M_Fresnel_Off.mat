@@ -53,7 +53,12 @@ Material:
     m_Floats:
     - _QueueControl: 0
     - _QueueOffset: 0
+    - _attention: 1
+    - _attentionLevel: 0
+    - _attentionNoiseStrength: 28.71
     - _fresnelPower: 3
+    - _healthLevel: 0
     m_Colors:
-    - _Color: {r: 0, g: 0.49324083, b: 1, a: 0}
+    - _Color: {r: 0.1981132, g: 0.7924528, b: 0.31698117, a: 0}
+    - _ColorDead: {r: 0.2, g: 0.7921569, b: 0.31764707, a: 0}
   m_BuildTextureStacks: []

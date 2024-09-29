@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: M_Fresnel_On
+  m_Name: M_Fresnel_Player_shot
   m_Shader: {fileID: -6465566751694194690, guid: c1ef9a9d2a68e3f468e08bb91ad964e3,
     type: 3}
   m_Parent: {fileID: 0}
@@ -56,9 +56,9 @@ Material:
     - _attention: 1
     - _attentionLevel: 0
     - _attentionNoiseStrength: 28.71
-    - _fresnelPower: 1
+    - _fresnelPower: 0.27
     - _healthLevel: 0
     m_Colors:
-    - _Color: {r: 0.1878202, g: 1, b: 0, a: 0}
+    - _Color: {r: 0.1882353, g: 1, b: 0, a: 0}
     - _ColorDead: {r: 0.1882353, g: 1, b: 0, a: 0}
   m_BuildTextureStacks: []
