@@ -16,9 +16,15 @@ public class GPTMenu : MonoBehaviour
     [SerializeField]
     private AudioClip meditation;
     [SerializeField]
+    private AudioClip meditationUser;
+    [SerializeField]
     private AudioClip alcohol;
     [SerializeField]
+    private AudioClip alcoholUser;
+    [SerializeField]
     private AudioClip empathy;
+    [SerializeField]
+    private AudioClip empathyUser;
 
     [SerializeField]
     private string meditationScene;
@@ -28,34 +34,51 @@ public class GPTMenu : MonoBehaviour
  [SerializeField]
     private AudioSource audioSource;
 
+    private bool canPlay;
+
     public async void Start()
     {
         await UniTask.Delay(TimeSpan.FromSeconds(3), ignoreTimeScale: false);
-        await PlayAudio(introduction);
+        PlayAudio(introduction);
+        await UniTask.Delay(TimeSpan.FromSeconds(introduction.length + 1), ignoreTimeScale: false);
+        canPlay = true;
     }
 
     public async void Update()
     {
+        if (!canPlay) return;
+
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            await PlayAudio(meditation);
+            canPlay = false;
+            PlayAudio(meditationUser);
+            await UniTask.Delay(TimeSpan.FromSeconds(meditationUser.length + 1), ignoreTimeScale: false);
+            PlayAudio(meditation);
+            await UniTask.Delay(TimeSpan.FromSeconds(meditation.length + 1), ignoreTimeScale: false);
             SceneManager.LoadScene(meditationScene);
         }
         else if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            await PlayAudio(alcohol);
+            canPlay = false;
+            PlayAudio(alcoholUser);
+            await UniTask.Delay(TimeSpan.FromSeconds(alcoholUser.length + 1), ignoreTimeScale: false);
+            PlayAudio(alcohol);
+            await UniTask.Delay(TimeSpan.FromSeconds(alcohol.length + 1), ignoreTimeScale: false);
             SceneManager.LoadScene(alcoholScene);
         }
         else if (Input.GetKeyDown(KeyCode.Alpha3))
         {
-            await PlayAudio(empathy);
+            canPlay = false;
+            PlayAudio(empathyUser);
+            await UniTask.Delay(TimeSpan.FromSeconds(empathyUser.length + 1), ignoreTimeScale: false);
+            PlayAudio(empathy);
+            await UniTask.Delay(TimeSpan.FromSeconds(empathy.length + 1), ignoreTimeScale: false);
             SceneManager.LoadScene(empathyScene);
         }
     }
 
-    private async Task PlayAudio(AudioClip clip)
+    private void PlayAudio(AudioClip clip)
     {
         audioSource.PlayOneShot(clip);
-        await UniTask.Delay(TimeSpan.FromSeconds(clip.length + 1), ignoreTimeScale: false);
     }
 }
