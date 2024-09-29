@@ -43,6 +43,22 @@
     "com.unity.modules.video": "1.0.0",
     "com.unity.modules.vr": "1.0.0",
     "com.unity.modules.wind": "1.0.0",
-    "com.unity.modules.xr": "1.0.0"
-  }
+    "com.unity.modules.xr": "1.0.0",
+    "com.github-glitchenzo.nugetforunity": "4.1.1",
+    "com.cysharp.unitask": "2.5.7"
+  },
+  "scopedRegistries": [
+    {
+      "name": "package.openupm.com",
+      "url": "https://package.openupm.com",
+      "scopes": [
+        "com.cysharp.unitask",
+        "com.github-glitchenzo.nugetforunity",
+        "org.nuget.system.buffers",
+        "org.nuget.system.memory",
+        "org.nuget.system.numerics.vectors",
+        "org.nuget.system.runtime.compilerservices.unsafe"
+      ]
+    }
+  ]
 }
